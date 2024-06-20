@@ -1,4 +1,4 @@
-import React, { type ReactNode } from "react";
+import React, { useState, type ReactNode } from "react";
 import '../App.css';
 
 interface Goal {
@@ -10,6 +10,13 @@ interface Goal {
 }
 
 export default function Goal({ image, children }: Goal) {
+    const [comment,setComment]=useState([])
+  function controller(){
+   setComment(prevCount =>{
+
+   })
+  }
+
   return (
     <header>
       <img src={image.src} alt={image.alt} />

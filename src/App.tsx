@@ -1,14 +1,15 @@
+import { useState } from 'react'
 import './App.css'
-import Goal from "./component/Goal"
 function App() {
+ const[Number ,setNumber] =useState<number>(0);
+ function handleNumber(){
+  setNumber(prevNumber=>{return (prevNumber+1)})
+ }
 
   return (
     <main>
-  <Goal image={{src:"https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",alt:"dsf"}}> 
-  <p>
-    hello world </p>
-      </Goal>
-
+   <button onClick={handleNumber}>click here </button>
+   <p>{Number}</p>
     </main>
   )
 }
