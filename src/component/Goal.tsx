@@ -1,26 +1,23 @@
-import React, { useState, type ReactNode } from "react";
-import '../App.css';
 
-interface Goal {
-  image: {
-    src: string;
-    alt: string;
-  };
-  children: ReactNode;
+import '../App.css';
+interface heading {
+  id:number,
+  tittle:string,
+  description:string,
+  ondelete:(id:number)=>void
+
 }
 
-export default function Goal({ image, children }: Goal) {
-    const [comment,setComment]=useState([])
-  function controller(){
-   setComment(prevCount =>{
-
-   })
-  }
-
+export default function Goal({tittle,description,ondelete,id}:heading
+) {
   return (
-    <header>
-      <img src={image.src} alt={image.alt} />
-      {children}
-    </header>
+   <article >
+    <div>
+      <h2>{tittle}</h2>
+      <p>{description}</p>
+     
+    </div>
+    <button onClick={()=>ondelete(id)}>delete</button>
+   </article>
   );
 }
